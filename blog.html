@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Veliki Data Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo"><img src="assets/logo_0002.webp" alt="Veliki Logo" style="height: 35px; vertical-align: middle;"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-primary">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. Blog Hero Section -->
+    <section class="blog-hero scroll-reveal">
+        <div class="blog-hero-bg"></div>
+        <div class="blog-hero-content">
+            <h1>Data Insights & <span>Analytics Stories</span></h1>
+            <p>Explore practical analytics insights, visualization techniques, industry trends, and data-driven strategies that turn complex information into meaningful decisions.</p>
+            
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="blog-search" placeholder="Search Articles...">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Featured Article -->
+    <section class="featured-article scroll-reveal">
+        <div class="featured-blog-card">
+            <div class="f-blog-img">
+                <img src="assets/dashboard_hero_1787147782365.webp" alt="Featured Insight Dashboard">
+            </div>
+            <div class="f-blog-content">
+                <div class="badge-featured">FEATURED INSIGHT</div>
+                <h2>The Future of Generative AI in Enterprise Analytics</h2>
+                <p>Discover how large language models and predictive algorithms are transforming B2B workflows, empowering teams to move from reactive reporting to proactive strategy.</p>
+                
+                <div class="blog-meta">
+                    <div class="author-info">
+                        <div class="author-avatar">ER</div>
+                        <div>
+                            <strong>Elena Rostova</strong>
+                            <span>Aug 24, 2026</span>
+                        </div>
+                    </div>
+                    <div class="read-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min read</div>
+                </div>
+                
+                <a href="404.html" class="read-article-btn">Read Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 3. Latest Analytics Insights -->
+    <section class="latest-insights scroll-reveal">
+        <div class="section-title">
+            <h2>Latest Analytics Insights</h2>
+        </div>
+        
+        <div class="insights-grid" id="insights-grid">
+            
+            <article class="premium-blog-card" data-category="Data Analytics">
+                <div class="card-img-wrapper">
+                    <img src="assets/dashboard_marketing_1787147823621.webp" alt="Data Analytics Trends">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="card-badge">Data Analytics</span>
+                </div>
+                <div class="card-body">
+                    <h3>10 Data Analytics Trends to Watch</h3>
+                    <p class="card-desc">Stay ahead of the curve by understanding the top trends shaping the future of data-driven business.</p>
+                    <div class="card-meta">
+                        <span class="card-author">Marcus Chen</span>
+                        <span class="card-date">Aug 18, 2026</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="reading-time">5 min read</span>
+                        <a href="404.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="premium-blog-card" data-category="SQL">
+                <div class="card-img-wrapper">
+                    <img src="assets/sql_techniques.webp" alt="SQL Techniques">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="card-badge">SQL</span>
+                </div>
+                <div class="card-body">
+                    <h3>SQL Techniques Every Data Analyst Should Know</h3>
+                    <p class="card-desc">Master advanced window functions, CTEs, and query optimization for faster data extraction.</p>
+                    <div class="card-meta">
+                        <span class="card-author">Sarah Jenkins</span>
+                        <span class="card-date">Aug 12, 2026</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="reading-time">7 min read</span>
+                        <a href="404.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="premium-blog-card" data-category="Power BI">
+                <div class="card-img-wrapper">
+                    <img src="assets/dashboard_sales_1787147804683.webp" alt="Power BI Dashboards">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="card-badge">Power BI</span>
+                </div>
+                <div class="card-body">
+                    <h3>How to Build Better Power BI Dashboards</h3>
+                    <p class="card-desc">Discover the UI/UX principles that separate cluttered reports from professional business intelligence tools.</p>
+                    <div class="card-meta">
+                        <span class="card-author">David Kim</span>
+                        <span class="card-date">Aug 05, 2026</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="reading-time">6 min read</span>
+                        <a href="404.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="premium-blog-card" data-category="Data Visualization">
+                <div class="card-img-wrapper">
+                    <img src="assets/dashboard_hero_1787147782365.webp" alt="Data Visualization">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="card-badge">Data Visualization</span>
+                </div>
+                <div class="card-body">
+                    <h3>Data Visualization Best Practices</h3>
+                    <p class="card-desc">Learn how to choose the right chart type to communicate complex datasets effectively.</p>
+                    <div class="card-meta">
+                        <span class="card-author">Elena Rostova</span>
+                        <span class="card-date">Jul 28, 2026</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="reading-time">4 min read</span>
+                        <a href="404.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="premium-blog-card" data-category="Business Intelligence">
+                <div class="card-img-wrapper">
+                    <img src="assets/dashboard_marketing_1787147823621.webp" alt="Business Insights">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="card-badge">Business Intelligence</span>
+                </div>
+                <div class="card-body">
+                    <h3>From Raw Data to Business Insights</h3>
+                    <p class="card-desc">A complete guide to constructing robust data pipelines that feed your executive dashboards.</p>
+                    <div class="card-meta">
+                        <span class="card-author">Marcus Chen</span>
+                        <span class="card-date">Jul 22, 2026</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="reading-time">9 min read</span>
+                        <a href="404.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="premium-blog-card" data-category="Python">
+                <div class="card-img-wrapper">
+                    <img src="assets/python_analysis.webp" alt="Python Data Analysis">
+                    <div class="card-gradient-overlay"></div>
+                    <span class="card-badge">Python</span>
+                </div>
+                <div class="card-body">
+                    <h3>How Python Simplifies Data Analysis</h3>
+                    <p class="card-desc">Leverage Pandas, NumPy, and Matplotlib to automate your most tedious analytical tasks.</p>
+                    <div class="card-meta">
+                        <span class="card-author">Sarah Jenkins</span>
+                        <span class="card-date">Jul 15, 2026</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="reading-time">8 min read</span>
+                        <a href="404.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- 4. Data Visualization Showcase -->
+    <section class="blog-viz-showcase scroll-reveal">
+        <div class="section-title">
+            <h2>Analytics Visualizations</h2>
+        </div>
+        <div class="viz-cards-wrapper">
+            <div class="viz-card">
+                <div class="viz-img-box">
+                    <img src="assets/dashboard_sales_1787147804683.webp" alt="Sales Dashboard">
+                    <div class="viz-overlay">
+                        <span class="viz-cat">Sales</span>
+                        <a href="404.html" class="explore-viz">Explore Visualization &rarr;</a>
+                    </div>
+                </div>
+                <h4>Sales Dashboard</h4>
+            </div>
+            
+            <div class="viz-card">
+                <div class="viz-img-box">
+                    <img src="assets/dashboard_marketing_1787147823621.webp" alt="Customer Analytics">
+                    <div class="viz-overlay">
+                        <span class="viz-cat">Customer</span>
+                        <a href="404.html" class="explore-viz">Explore Visualization &rarr;</a>
+                    </div>
+                </div>
+                <h4>Customer Analytics</h4>
+            </div>
+            
+
+            
+            <div class="viz-card">
+                <div class="viz-img-box">
+                    <img src="assets/dashboard_hero_1787147782365.webp" alt="Marketing Analytics">
+                    <div class="viz-overlay">
+                        <span class="viz-cat">Marketing</span>
+                        <a href="404.html" class="explore-viz">Explore Visualization &rarr;</a>
+                    </div>
+                </div>
+                <h4>Marketing Analytics</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Trending Insights (Minimal List) -->
+    <section class="trending-insights scroll-reveal">
+        <div class="section-title">
+            <h2>Trending Insights</h2>
+        </div>
+        <div class="trending-list">
+            <div class="trending-item">
+                <div class="tr-img"><img src="assets/dashboard_sales_1787147804683.webp" alt="Thumb"></div>
+                <div class="tr-content">
+                    <h4>Building Scalable Data Warehouses</h4>
+                    <div class="tr-meta">
+                        <span class="tr-cat">Data Engineering</span> &bull; <span>6 min read</span>
+                    </div>
+                </div>
+                <div class="tr-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 12.4K</div>
+            </div>
+            <div class="trending-item">
+                <div class="tr-img"><img src="assets/dashboard_marketing_1787147823621.webp" alt="Thumb"></div>
+                <div class="tr-content">
+                    <h4>Advanced DAX Formulas for Power BI</h4>
+                    <div class="tr-meta">
+                        <span class="tr-cat">Power BI</span> &bull; <span>10 min read</span>
+                    </div>
+                </div>
+                <div class="tr-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 8.9K</div>
+            </div>
+            <div class="trending-item">
+                <div class="tr-img"><img src="assets/python_reports_thumb.webp" alt="Thumb"></div>
+                <div class="tr-content">
+                    <h4>Automating Reports with Python</h4>
+                    <div class="tr-meta">
+                        <span class="tr-cat">Python</span> &bull; <span>5 min read</span>
+                    </div>
+                </div>
+                <div class="tr-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> 7.2K</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Newsletter CTA -->
+    <section class="premium-newsletter scroll-reveal">
+        <div class="newsletter-particles"></div>
+        <div class="newsletter-content">
+            <h2>Stay Ahead With Data</h2>
+            <p>Get the latest analytics insights, tutorials, visualization tips, and industry trends directly in your inbox.</p>
+            <form class="newsletter-form" action="404.html">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. Final CTA -->
+    <section class="blog-final-cta scroll-reveal">
+        <div class="cta-inner">
+            <h2>Turn Data Into Your Next Big Insight.</h2>
+            <div class="cta-actions">
+                <a href="404.html" class="btn-primary">Explore Articles</a>
+                <a href="404.html" class="btn-secondary">View Analytics Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="premium-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo"><img src="assets/logo_0002.webp" alt="Veliki Logo" style="height: 50px; margin-bottom: 1rem;"></div>
+                <p>Empowering businesses to transform complex data into actionable, high-impact decisions.</p>
+                <div class="footer-socials">
+                    <a href="404.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="404.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                    <a href="404.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="services.html">Data Analytics</a></li>
+                    <li><a href="services.html">Business Intelligence</a></li>
+                    <li><a href="services.html">Data Visualization</a></li>
+                    <li><a href="login.html">Client Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog & Insights</a></li>
+                    <li><a href="contact.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest analytics trends delivered to your inbox.</p>
+                <form class="footer-form" action="404.html">
+                    <input type="email" placeholder="Email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Data Analytics. All Rights Reserved.</p>
+            <div class="footer-legal">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 100 });
+</script>
+</body>
+</html>
+
+
+
+
+
+
