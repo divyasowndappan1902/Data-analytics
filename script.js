@@ -1,3 +1,23 @@
+// Dashboard Hamburger Menu Toggle
+const dashHamburger = document.querySelector('.dash-hamburger');
+const dashSidebar = document.querySelector('.dash-sidebar');
+
+if(dashHamburger && dashSidebar) {
+    dashHamburger.addEventListener('click', () => {
+        dashHamburger.classList.toggle('active');
+        dashSidebar.classList.toggle('active');
+    });
+}
+// Hamburger Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const mainNavLinks = document.querySelector('.nav-links');
+
+if(hamburger && mainNavLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mainNavLinks.classList.toggle('active');
+    });
+}
 // script.js
 
 // Navbar scroll effect
@@ -333,6 +353,12 @@ if (dashNavItems.length > 0) {
                     }
                 });
             }
+
+            // Close mobile sidebar when an item is selected
+            if (window.innerWidth <= 1024) {
+                if (dashSidebar) dashSidebar.classList.remove('active');
+                if (dashHamburger) dashHamburger.classList.remove('active');
+            }
         });
     });
 }
@@ -373,4 +399,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
 
