@@ -16,6 +16,7 @@ if(hamburger && mainNavLinks) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         mainNavLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
     });
 }
 // script.js
@@ -401,4 +402,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+const faqHeaders = document.querySelectorAll('.faq-header');
+if (faqHeaders.length > 0) {
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.faq-icon');
+            
+            const isOpen = item.classList.contains('open');
+            
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+                faqItem.classList.remove('open');
+                faqItem.querySelector('.faq-content').style.maxHeight = null;
+                faqItem.querySelector('.faq-icon').textContent = '+';
+            });
+            
+            if (!isOpen) {
+                item.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = '-';
+            }
+        });
+    });
+}
 
