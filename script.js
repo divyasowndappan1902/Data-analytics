@@ -151,22 +151,9 @@ if (contactForm) {
             btn.innerHTML = 'Sending...';
             btn.style.opacity = '0.7';
             btn.style.pointerEvents = 'none';
-            
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.opacity = '1';
-                btn.style.pointerEvents = 'auto';
-                
-                // Show success message
-                formSuccess.classList.add('show');
-                contactForm.reset();
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    formSuccess.classList.remove('show');
-                }, 5000);
-                
-            }, 1500);
+                  window.location.href = '404.html';
+              }, 1500);
         }
     });
     
@@ -429,4 +416,207 @@ if (faqHeaders.length > 0) {
         });
     });
 }
+
+
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+});
+
+// Process Steps Interactive Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const processSteps = document.querySelectorAll('.process-steps .step');
+    if (processSteps.length > 0) {
+        // Initial state: first step active, others inactive
+        processSteps.forEach((step, index) => {
+            if (index === 0) {
+                step.classList.add('active');
+            } else {
+                step.classList.add('inactive');
+            }
+            
+            // Add loader element
+            const loader = document.createElement('div');
+            loader.className = 'step-loader';
+            step.appendChild(loader);
+
+            // Click event
+            step.addEventListener('click', () => {
+                if (step.classList.contains('active') || step.classList.contains('loading')) return;
+                
+                // Mark clicked step as loading
+                step.classList.remove('inactive');
+                step.classList.add('loading');
+                
+                // Dim all other steps
+                processSteps.forEach(s => {
+                    if (s !== step) {
+                        s.classList.remove('active');
+                        s.classList.add('inactive');
+                    }
+                });
+
+                // Simulate 1.5s premium loading
+                setTimeout(() => {
+                    step.classList.remove('loading');
+                    step.classList.add('active');
+                }, 1500);
+            });
+        });
+    }
+});
+
+// Subscribe Form Validation
+document.addEventListener('DOMContentLoaded', () => {
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+        const showError = (input, message) => {
+        input.style.border = '2px solid #ef4444';
+        
+        const container = input.closest('form') || input.closest('.form-group');
+        let errorMsg = container.nextElementSibling;
+        
+        if (!errorMsg || !errorMsg.classList.contains('email-error-msg')) {
+            errorMsg = document.createElement('div');
+            errorMsg.className = 'email-error-msg';
+            errorMsg.style.color = '#ef4444';
+            errorMsg.style.fontSize = '0.85rem';
+            errorMsg.style.marginTop = '0.5rem';
+            container.insertAdjacentElement('afterend', errorMsg);
+        }
+        errorMsg.textContent = message;
+    };
+
+    const removeError = (input) => {
+        input.style.border = '';
+        const container = input.closest('form') || input.closest('.form-group');
+        const errorMsg = container.nextElementSibling;
+        if (errorMsg && errorMsg.classList.contains('email-error-msg')) {
+            errorMsg.remove();
+        }
+    };
+
+    // Handle .newsletter-box (no form tag)
+    const newsletterBoxes = document.querySelectorAll('.newsletter-box');
+    newsletterBoxes.forEach(box => {
+        const input = box.querySelector('input[type="email"]');
+        const btn = box.querySelector('button');
+        if (input && btn) {
+            btn.addEventListener('click', (e) => {
+                const val = input.value.trim();
+                if (!val || !validateEmail(val)) {
+                    e.preventDefault();
+                    showError(input, 'Please enter your email address.');
+                } else {
+                    removeError(input);
+                    // simulate success or redirect
+                    window.location.href = '404.html';
+                }
+            });
+
+            input.addEventListener('input', () => {
+                if (input.value.trim() && validateEmail(input.value.trim())) {
+                    removeError(input);
+                }
+            });
+        }
+    });
+
+    // Handle .footer-form (has form tag)
+    const footerForms = document.querySelectorAll('.footer-form, .newsletter-form');
+    footerForms.forEach(form => {
+        const input = form.querySelector('input[type="email"]');
+        if (input) {
+            // Remove required attribute so we can handle validation fully via JS
+            input.removeAttribute('required');
+            
+            form.addEventListener('submit', (e) => {
+                const val = input.value.trim();
+                if (!val || !validateEmail(val)) {
+                    e.preventDefault();
+                    showError(input, 'Please enter your email address.');
+                } else {
+                    removeError(input);
+                    // allow form submission to proceed
+                }
+            });
+
+            input.addEventListener('input', () => {
+                if (input.value.trim() && validateEmail(input.value.trim())) {
+                    removeError(input);
+                }
+            });
+        }
+    });
+});
+
+
+
+
+
+// Premium Text Animations Observer
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    let staggerQueue = [];
+    let staggerTimeout = null;
+
+    const observer = new IntersectionObserver((entries) => {
+        const intersecting = entries.filter(e => e.isIntersecting && !e.target.classList.contains('text-animate-in'));
+        
+        if (intersecting.length > 0) {
+            intersecting.forEach(entry => {
+                staggerQueue.push(entry.target);
+                observer.unobserve(entry.target);
+            });
+
+            if (!staggerTimeout) {
+                staggerTimeout = setTimeout(() => {
+                    // Sort by vertical position on the page to ensure top-down staggering
+                    staggerQueue.sort((a, b) => {
+                        return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+                    });
+
+                    staggerQueue.forEach((el, index) => {
+                        el.style.transitionDelay = `${index * 100}ms`;
+                        // Force reflow
+                        void el.offsetWidth;
+                        el.classList.add('text-animate-in');
+                    });
+
+                    staggerQueue = [];
+                    staggerTimeout = null;
+                }, 50); // Small batching delay
+            }
+        }
+    }, observerOptions);
+
+    // Select all targeted elements
+    const elementsToAnimate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, .btn-primary, .btn-secondary, button');
+    
+    elementsToAnimate.forEach((el) => {
+        // Skip elements that are already part of other complex structures if needed,
+        // but for now apply to all as requested.
+        
+        // Remove AOS to prevent conflicts
+        if (el.hasAttribute('data-aos')) {
+            el.removeAttribute('data-aos');
+        }
+        
+        el.classList.add('premium-text-animate');
+        observer.observe(el);
+    });
+});
 

@@ -9,6 +9,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo"><img src="assets/logo_0002.webp" alt="Stackly Logo" style="height: 35px; vertical-align: middle;"></a>
@@ -27,7 +30,33 @@
 
     <!-- 1. Blog Hero Section -->
     <section class="blog-hero scroll-reveal">
-        <div class="blog-hero-bg"></div>
+                <div class="blog-hero-bg">
+            <svg class="hero-animated-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6;">
+                <style>
+                    .line2 { stroke: rgba(106, 17, 203, 0.5); stroke-width: 2; stroke-dasharray: 800; stroke-dashoffset: 800; animation: drawLine2 5s infinite alternate ease-in-out; }
+                    .node2 { fill: rgba(106, 17, 203, 0.9); animation: pulseNode2 2.5s infinite alternate ease-in-out; }
+                    @keyframes drawLine2 { to { stroke-dashoffset: 0; } }
+                    @keyframes pulseNode2 { to { r: 5; opacity: 1; } }
+                    .node2:nth-child(even) { animation-delay: 1s; fill: rgba(56, 189, 248, 0.9); }
+                    .line2:nth-child(odd) { animation-duration: 7s; stroke: rgba(56, 189, 248, 0.5); }
+                </style>
+                <path class="line2" d="M0,200 L200,100 L400,250 L600,150 L800,300 L1000,200" />
+                <path class="line2" d="M0,300 L250,250 L450,100 L650,200 L850,150 L1000,250" />
+                <path class="line2" d="M0,100 L200,200 L400,150 L600,300 L800,100 L1000,150" />
+                <circle class="node2" cx="200" cy="100" r="2" />
+                <circle class="node2" cx="400" cy="250" r="2" />
+                <circle class="node2" cx="600" cy="150" r="2" />
+                <circle class="node2" cx="800" cy="300" r="2" />
+                <circle class="node2" cx="250" cy="250" r="2" />
+                <circle class="node2" cx="450" cy="100" r="2" />
+                <circle class="node2" cx="650" cy="200" r="2" />
+                <circle class="node2" cx="850" cy="150" r="2" />
+                <circle class="node2" cx="200" cy="200" r="2" />
+                <circle class="node2" cx="400" cy="150" r="2" />
+                <circle class="node2" cx="600" cy="300" r="2" />
+                <circle class="node2" cx="800" cy="100" r="2" />
+            </svg>
+        </div>
         <div class="blog-hero-content">
             <h1>Data Insights & <span>Analytics Stories</span></h1>
             <p>Explore practical analytics insights, visualization techniques, industry trends, and data-driven strategies that turn complex information into meaningful decisions.</p>
@@ -329,9 +358,10 @@
             <div class="footer-links">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="blog.html">Blog & Insights</a></li>
-                    <li><a href="contact.html">Careers</a></li>
+                         <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                         <li><a href="service.html">Service</a></li>
+                    <li><a href="blog.html">Blog </a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -360,6 +390,7 @@
 </script>
 </body>
 </html>
+
 
 
 

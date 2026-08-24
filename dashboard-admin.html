@@ -189,6 +189,115 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- 1. Recent Transactions -->
+            <div class="table-card" style="margin-top: 2rem;" data-aos="fade-up">
+                <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="margin: 0;">Recent Transactions</h3>
+                    <button style="background: none; border: none; color: #8b5cf6; cursor: pointer; font-weight: 600; font-size: 0.9rem;">View All</button>
+                </div>
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-family: monospace; color: #94a3b8;">#TRX-8921</td>
+                            <td>TechCorp Inc.</td>
+                            <td style="font-weight: 600;">$299.00</td>
+                            <td style="color: #94a3b8;">Oct 24, 2023</td>
+                            <td><span class="status-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: monospace; color: #94a3b8;">#TRX-8920</td>
+                            <td>StartupFlow</td>
+                            <td style="font-weight: 600;">$99.00</td>
+                            <td style="color: #94a3b8;">Oct 24, 2023</td>
+                            <td><span class="status-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: monospace; color: #94a3b8;">#TRX-8919</td>
+                            <td>GlobalNet</td>
+                            <td style="font-weight: 600;">$1,499.00</td>
+                            <td style="color: #94a3b8;">Oct 23, 2023</td>
+                            <td><span class="status-badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">Processing</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 2. Support Tickets & 3. Traffic Sources Row -->
+            <div class="dash-chart-row" style="margin-top: 2rem;" data-aos="fade-up">
+                
+                <!-- Support Tickets -->
+                <div class="table-card" style="flex: 2; margin-bottom: 0;">
+                    <div class="chart-header">
+                        <h3>Active Support Tickets</h3>
+                    </div>
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket</th>
+                                <th>Subject</th>
+                                <th>Priority</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-family: monospace; color: #94a3b8;">#TK-1042</td>
+                                <td>API Rate Limit Exceeded Issue</td>
+                                <td><span class="status-badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">High</span></td>
+                                <td><button style="background:none; border:1px solid #8b5cf6; color:#8b5cf6; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Review</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: monospace; color: #94a3b8;">#TK-1041</td>
+                                <td>Billing Cycle Clarification</td>
+                                <td><span class="status-badge" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Normal</span></td>
+                                <td><button style="background:none; border:1px solid #8b5cf6; color:#8b5cf6; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Review</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: monospace; color: #94a3b8;">#TK-1040</td>
+                                <td>Webhook Delivery Failures</td>
+                                <td><span class="status-badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">Urgent</span></td>
+                                <td><button style="background:none; border:1px solid #8b5cf6; color:#8b5cf6; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Review</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Traffic Sources -->
+                <div class="chart-card" style="flex: 1; margin-bottom: 0;">
+                    <div class="chart-header">
+                        <h3>Traffic Sources</h3>
+                    </div>
+                    <div class="chart-placeholder" style="flex-direction: column; gap: 2rem; align-items: stretch; justify-content: center; padding: 1rem 2rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Organic Search</span> <span>65%</span></div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 65%; height: 100%; background: #8b5cf6;"></div></div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Direct</span> <span>20%</span></div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 20%; height: 100%; background: #3b82f6;"></div></div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Referrals</span> <span>10%</span></div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 10%; height: 100%; background: #10b981;"></div></div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Social</span> <span>5%</span></div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 5%; height: 100%; background: #f59e0b;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div> <!-- End Overview Section -->
 
             <!-- User Management Section -->
@@ -254,6 +363,118 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <div class="table-card" data-aos="fade-up" style="margin-top: 2rem;">
+                    <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem;">
+                        <h3 style="margin: 0;">Role Management</h3>
+                        <button class="btn-primary" style="padding: 0.5rem 1rem; border-radius: 6px; border: none; background: #8b5cf6; color: white; font-weight: 600; cursor: pointer; font-size: 0.9rem;" onclick="window.location.href='404.html'">+ Create Role</button>
+                    </div>
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Role Name</th>
+                                <th>Users</th>
+                                <th>Permissions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Admin</td>
+                                <td>2</td>
+                                <td>Full Access</td>
+                                <td><button style="background:none; border:none; color:#8b5cf6; cursor:pointer; font-weight:600;">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Editor</td>
+                                <td>14</td>
+                                <td>Read, Write, Update</td>
+                                <td><button style="background:none; border:none; color:#8b5cf6; cursor:pointer; font-weight:600;">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Viewer</td>
+                                <td>14,504</td>
+                                <td>Read Only</td>
+                                <td><button style="background:none; border:none; color:#8b5cf6; cursor:pointer; font-weight:600;">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-card" data-aos="fade-up" style="margin-top: 2rem;">
+                    <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem;">
+                        <h3 style="margin: 0;">Pending Approvals</h3>
+                        <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">45 Pending</span>
+                    </div>
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Requested Role</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Elena Rostova</td>
+                                <td>erostova@startup.dev</td>
+                                <td>Viewer</td>
+                                <td>Oct 24, 2023</td>
+                                <td>
+                                    <button style="background:#10b981; border:none; color:white; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; margin-right: 0.5rem; font-size: 0.8rem;">Approve</button>
+                                    <button style="background:none; border:1px solid #ef4444; color:#ef4444; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Deny</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>James Smith</td>
+                                <td>jsmith@company.com</td>
+                                <td>Editor</td>
+                                <td>Oct 24, 2023</td>
+                                <td>
+                                    <button style="background:#10b981; border:none; color:white; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; margin-right: 0.5rem; font-size: 0.8rem;">Approve</button>
+                                    <button style="background:none; border:1px solid #ef4444; color:#ef4444; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Deny</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-card" data-aos="fade-up" style="margin-top: 2rem;">
+                    <div class="chart-header" style="padding-bottom: 1rem;">
+                        <h3 style="margin: 0;">Recent Activity Logs</h3>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <div>
+                                <p style="margin: 0; font-size: 0.95rem;"><strong>Sarah Jenkins</strong> updated permissions for <strong>Editor</strong> role.</p>
+                                <span style="font-size: 0.8rem; color: #a1a1aa;">2 minutes ago</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="background: rgba(16, 185, 129, 0.1); color: #10b981; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div>
+                                <p style="margin: 0; font-size: 0.95rem;"><strong>David Kim</strong> approved <strong>Elena Rostova</strong>'s account.</p>
+                                <span style="font-size: 0.8rem; color: #a1a1aa;">1 hour ago</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="background: rgba(239, 68, 68, 0.1); color: #ef4444; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            </div>
+                            <div>
+                                <p style="margin: 0; font-size: 0.95rem;"><strong>System</strong> blocked suspicious login from IP 192.168.1.42.</p>
+                                <span style="font-size: 0.8rem; color: #a1a1aa;">3 hours ago</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div> <!-- End User Management Section -->
 
@@ -349,6 +570,109 @@
                     </div>
                 </div>
 
+                <!-- Service Uptime Status -->
+                <div class="dash-kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 2rem;" data-aos="fade-up">
+                    <div class="kpi-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #94a3b8; font-size: 0.9rem;">Main API</span>
+                            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin: 0;">99.99%</h3>
+                        <p style="margin: 0; color: #10b981; font-size: 0.8rem;">Operational</p>
+                    </div>
+                    <div class="kpi-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #94a3b8; font-size: 0.9rem;">Database Cluster</span>
+                            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin: 0;">99.95%</h3>
+                        <p style="margin: 0; color: #10b981; font-size: 0.8rem;">Operational</p>
+                    </div>
+                    <div class="kpi-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #94a3b8; font-size: 0.9rem;">Storage Bucket</span>
+                            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; box-shadow: 0 0 8px #f59e0b;"></span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin: 0;">98.20%</h3>
+                        <p style="margin: 0; color: #f59e0b; font-size: 0.8rem;">Degraded Performance</p>
+                    </div>
+                    <div class="kpi-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #94a3b8; font-size: 0.9rem;">Auth Service</span>
+                            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; margin: 0;">100%</h3>
+                        <p style="margin: 0; color: #10b981; font-size: 0.8rem;">Operational</p>
+                    </div>
+                </div>
+
+                <!-- Active Alerts & Database Performance Row -->
+                <div class="dash-chart-row" style="margin-top: 2rem;" data-aos="fade-up">
+                    
+                    <!-- Active Alerts -->
+                    <div class="table-card" style="flex: 2; margin-bottom: 0;">
+                        <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem;">
+                            <h3 style="margin: 0;">Active Alerts & Incidents</h3>
+                            <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">2 Critical</span>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Severity</th>
+                                    <th>Incident</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">Critical</span></td>
+                                    <td>Storage Bucket High Latency</td>
+                                    <td>12m 40s</td>
+                                    <td><button style="background:none; border:1px solid #8b5cf6; color:#8b5cf6; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Acknowledge</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">Critical</span></td>
+                                    <td>CPU Spike on Node-4</td>
+                                    <td>5m 12s</td>
+                                    <td><button style="background:none; border:1px solid #8b5cf6; color:#8b5cf6; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Acknowledge</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">Warning</span></td>
+                                    <td>SSL Cert Expires in 7 Days</td>
+                                    <td>1d 4h</td>
+                                    <td><button style="background:none; border:1px solid #8b5cf6; color:#8b5cf6; padding: 0.3rem 0.8rem; border-radius: 4px; cursor:pointer; font-weight:600; font-size: 0.8rem;">Acknowledge</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Database Performance -->
+                    <div class="chart-card" style="flex: 1; margin-bottom: 0;">
+                        <div class="chart-header">
+                            <h3>Database Performance</h3>
+                        </div>
+                        <div class="chart-placeholder" style="flex-direction: column; gap: 2rem; align-items: stretch; justify-content: center; padding: 1rem 2rem;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Query Latency</span> <span>45 ms</span></div>
+                                <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 15%; height: 100%; background: #10b981;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Active Connections</span> <span>842 / 1000</span></div>
+                                <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 84%; height: 100%; background: #f59e0b;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Cache Hit Ratio</span> <span>96.5%</span></div>
+                                <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 96%; height: 100%; background: #3b82f6;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; color:#f8fafc;"><span>Deadlocks</span> <span>0</span></div>
+                                <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow:hidden;"><div style="width: 2%; height: 100%; background: #10b981;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div> <!-- End Server Health Section -->
 
             <!-- Settings Section -->
@@ -432,6 +756,86 @@
                         </div>
                     </div>
 
+                </div>
+
+                <!-- Second Row of Settings -->
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <!-- 4. API Keys & Integrations -->
+                        <div class="table-card" style="padding: 2.5rem; margin-bottom: 2rem;" data-aos="fade-up">
+                            <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">API Keys & Integrations</h3>
+                            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">Manage your API keys for external access.</p>
+                            <div style="background: rgba(15,23,42,0.6); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <div>
+                                    <span style="display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.25rem;">Production Key</span>
+                                    <code style="color: #f8fafc; font-family: monospace;">sk_live_xxxx...8f92</code>
+                                </div>
+                                <button type="button" style="background: none; border: none; color: #8b5cf6; cursor: pointer; font-weight: 600;">Copy</button>
+                            </div>
+                            <button type="button" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: none; background: rgba(139, 92, 246, 0.1); color: #8b5cf6; border: 1px solid rgba(139, 92, 246, 0.2); font-weight: 600; cursor: pointer;" onclick="window.location.href='404.html'">+ Generate New Key</button>
+                        </div>
+                        
+                        <!-- 5. Workspace Preferences -->
+                        <div class="table-card" style="padding: 2.5rem;" data-aos="fade-up">
+                            <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Workspace Preferences</h3>
+                            <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: #94a3b8;">Workspace Name</label>
+                                    <input type="text" value="Stackly Global" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.6); color: white; outline: none; box-sizing: border-box;">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: #94a3b8;">Support Email</label>
+                                    <input type="email" value="support@stackly.com" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.6); color: white; outline: none; box-sizing: border-box;">
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                                    <div>
+                                        <h4 style="margin: 0 0 0.25rem 0; color: #f8fafc; font-size: 0.95rem;">Maintenance Mode</h4>
+                                        <p style="margin: 0; color: #94a3b8; font-size: 0.8rem;">Disable non-admin access.</p>
+                                    </div>
+                                    <label style="position: relative; display: inline-block; width: 40px; height: 24px;">
+                                        <input type="checkbox" style="opacity: 0; width: 0; height: 0;">
+                                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,0.1); transition: .4s; border-radius: 24px;"></span>
+                                        <span style="position: absolute; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div style="flex: 1; min-width: 300px;">
+                        <!-- 6. Billing & Subscription -->
+                        <div class="table-card" style="padding: 2.5rem;" data-aos="fade-up">
+                            <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Billing & Subscription</h3>
+                            
+                            <div style="background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(37,99,235,0.1) 100%); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(139,92,246,0.2); margin-bottom: 2rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                                    <div>
+                                        <span style="display: inline-block; background: #8b5cf6; color: white; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem;">Pro Tier</span>
+                                        <h4 style="margin: 0; color: #f8fafc; font-size: 1.1rem;">$199.00 / month</h4>
+                                    </div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" width="24" height="24"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                                </div>
+                                <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Next billing cycle starts on <strong>Nov 15, 2023</strong>.</p>
+                            </div>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="margin-bottom: 1rem; color: #f8fafc; font-size: 1rem;">Payment Method</h4>
+                                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(15,23,42,0.6); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                                    <div style="background: white; padding: 0.2rem 0.4rem; border-radius: 4px; font-weight: bold; color: #1e40af; font-size: 0.8rem; font-style: italic;">VISA</div>
+                                    <div>
+                                        <span style="display: block; color: #f8fafc; font-size: 0.9rem;">•••• •••• •••• 4242</span>
+                                        <span style="display: block; color: #94a3b8; font-size: 0.8rem;">Expires 12/25</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem;">
+                                <button type="button" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: none; background: #8b5cf6; color: white; font-weight: 600; cursor: pointer; flex: 1;" onclick="window.location.href='404.html'">Manage Billing</button>
+                                <button type="button" style="padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-weight: 600; cursor: pointer; flex: 1;" onclick="window.location.href='404.html'">View Invoices</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div> <!-- End Settings Section -->
             

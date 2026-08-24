@@ -9,6 +9,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo"><img src="assets/logo_0002.webp" alt="Stackly Logo" style="height: 35px; vertical-align: middle;"></a>
@@ -27,7 +30,35 @@
 
     <!-- 1. Hero Section -->
     <section class="about-hero scroll-reveal">
-        <div class="about-hero-bg">
+                <div class="about-hero-bg">
+            <svg class="hero-animated-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.7;">
+                <style>
+                    .line { stroke: rgba(56, 189, 248, 0.4); stroke-width: 1.5; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 4s infinite alternate ease-in-out; }
+                    .node { fill: rgba(56, 189, 248, 0.8); animation: pulseNode 2s infinite alternate ease-in-out; }
+                    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+                    @keyframes pulseNode { to { r: 6; opacity: 1; } }
+                    .node:nth-child(odd) { animation-delay: 0.5s; fill: rgba(106, 17, 203, 0.8); }
+                    .line:nth-child(even) { animation-duration: 6s; stroke: rgba(106, 17, 203, 0.4); }
+                </style>
+                <path class="line" d="M100,200 L300,100 L500,250 L700,150 L900,300" />
+                <path class="line" d="M150,300 L350,250 L550,100 L750,200 L950,150" />
+                <path class="line" d="M50,100 L250,200 L450,150 L650,300 L850,100" />
+                <circle class="node" cx="100" cy="200" r="3" />
+                <circle class="node" cx="300" cy="100" r="3" />
+                <circle class="node" cx="500" cy="250" r="3" />
+                <circle class="node" cx="700" cy="150" r="3" />
+                <circle class="node" cx="900" cy="300" r="3" />
+                <circle class="node" cx="150" cy="300" r="3" />
+                <circle class="node" cx="350" cy="250" r="3" />
+                <circle class="node" cx="550" cy="100" r="3" />
+                <circle class="node" cx="750" cy="200" r="3" />
+                <circle class="node" cx="950" cy="150" r="3" />
+                <circle class="node" cx="50" cy="100" r="3" />
+                <circle class="node" cx="250" cy="200" r="3" />
+                <circle class="node" cx="450" cy="150" r="3" />
+                <circle class="node" cx="650" cy="300" r="3" />
+                <circle class="node" cx="850" cy="100" r="3" />
+            </svg>
             <div class="grid-overlay"></div>
             <div class="glowing-orb orb-1"></div>
             <div class="glowing-orb orb-2"></div>
@@ -42,76 +73,6 @@
         </div>
     </section>
 
-    <!-- 2. Who We Are -->
-    <section class="who-we-are scroll-reveal">
-        <div class="who-split-layout">
-            <div class="who-text">
-                <h2>Who We Are</h2>
-                <p>Stackly is a premier Data Analytics platform engineered for the modern enterprise. We bridge the gap between raw data and strategic execution.</p>
-                <p>Our focus is steadfastly on business intelligence, intuitive data visualization, comprehensive reporting, and enabling data-driven decision making at every level of your organization.</p>
-            </div>
-            <div class="who-visual">
-                <div class="dashboard-mockup">
-                    <div class="dash-header">
-                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    </div>
-                    <div class="dash-body">
-                        <div class="chart-bar-group">
-                            <div class="chart-bar" style="--h: 60%"></div>
-                            <div class="chart-bar" style="--h: 85%"></div>
-                            <div class="chart-bar" style="--h: 40%"></div>
-                            <div class="chart-bar" style="--h: 95%"></div>
-                            <div class="chart-bar" style="--h: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Mission & Vision -->
-    <section class="mission-vision-premium scroll-reveal">
-        <div class="mv-premium-grid">
-            <div class="mv-glass-card">
-                <div class="mv-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <h3>Our Mission</h3>
-                <p>To architect the foundational intelligence layer for forward-thinking enterprises, making deep data science accessible, intuitive, and highly impactful.</p>
-            </div>
-            <div class="mv-glass-card">
-                <div class="mv-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                </div>
-                <h3>Our Vision</h3>
-                <p>A global business ecosystem where absolute clarity replaces intuition, and every strategic decision is backed by irrefutable, real-time data insights.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. What We Do -->
-    <section class="what-we-do scroll-reveal">
-        <div class="section-title">
-            <h2>What We Do</h2>
-            <p>Comprehensive analytics capabilities tailored for your growth.</p>
-        </div>
-        <div class="wwd-grid">
-            <div class="wwd-card">
-                <div class="wwd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21H3V3m18 8l-6-6-4 4-6-6"/></svg></div>
-                <h4>Data Analysis</h4>
-                <p>Deep dive into your datasets to uncover hidden patterns and actionable trends.</p>
-            </div>
-            <div class="wwd-card">
-                <div class="wwd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-                <h4>Business Intelligence</h4>
-                <p>Transforming complex operational data into unified, strategic enterprise intelligence.</p>
-            </div>
-            <div class="wwd-card">
-                <div class="wwd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-                <h4>Data Visualization</h4>
-                <p>Beautiful, intuitive visual representations that make complex metrics instantly readable.</p>
-            </div>
-            <div class="wwd-card">
                 <div class="wwd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
                 <h4>Performance Analytics</h4>
                 <p>Monitor KPIs in real-time to optimize operations and drive sustainable efficiency.</p>
@@ -167,7 +128,6 @@
             </div>
         </div>
     </section>
-
     <!-- 7. Why Choose Our Analytics -->
     <section class="why-choose scroll-reveal">
         <div class="section-title">
@@ -197,6 +157,7 @@
         </div>
     </section>
 
+    
     <!-- 8. Key Metrics -->
     <section class="key-metrics-section scroll-reveal">
         <div class="metrics-grid">
@@ -215,35 +176,6 @@
             <div class="metric-card">
                 <h3 class="animated-counter" data-target="24">0</h3><span class="plus">/7</span>
                 <p>Data Monitoring</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. Our Approach -->
-    <section class="our-approach scroll-reveal">
-        <div class="section-title">
-            <h2>Our Approach</h2>
-        </div>
-        <div class="approach-timeline">
-            <div class="approach-item">
-                <div class="approach-dot"></div>
-                <h4>Understand</h4>
-            </div>
-            <div class="approach-item">
-                <div class="approach-dot"></div>
-                <h4>Discover</h4>
-            </div>
-            <div class="approach-item">
-                <div class="approach-dot"></div>
-                <h4>Analyze</h4>
-            </div>
-            <div class="approach-item">
-                <div class="approach-dot"></div>
-                <h4>Visualize</h4>
-            </div>
-            <div class="approach-item">
-                <div class="approach-dot"></div>
-                <h4>Optimize</h4>
             </div>
         </div>
     </section>
@@ -283,10 +215,11 @@
             <div class="footer-links">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="blog.html">Blog & Insights</a></li>
-                    <li><a href="contact.html">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                         <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                         <li><a href="service.html">Service</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-newsletter">
@@ -314,6 +247,12 @@
 </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
