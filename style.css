@@ -164,7 +164,7 @@ a {
     justify-content: space-between;
     padding: 8rem 5% 5rem;
     min-height: 100vh;
-    background: linear-gradient(rgba(7, 15, 32, 0.9), rgba(7, 15, 32, 0.9)), url('assets/hero.webp') center/cover no-repeat;
+    background: var(--bg-color);
     position: relative;
     overflow: hidden;
 }
@@ -210,9 +210,19 @@ a {
 }
 
 .hero-content h1 span {
-    background: linear-gradient(to right, #38bdf8, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* override global span */
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}
+
+.hero-content h1 span.anim-line-text {
+    color: #ffffff;
+}
+
+.hero-content h1 span.animated-gradient-text {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5), 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
 .hero-content p {
@@ -471,8 +481,8 @@ footer p {
 .quote { font-style: italic; margin-bottom: 2rem; color: #e2e8f0; font-size: 1.1rem; line-height: 1.8; }
 .author { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
 .author-avatar { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; color: white; }
-.author-info h4 { margin-bottom: 0.2rem; }
-.author-info span { color: var(--text-muted); font-size: 0.9rem; }
+.author-info h4 { margin-bottom: 0.2rem; font-size: 1.1rem; }
+.author-info span, .author-info h5 { color: var(--text-muted); font-size: 0.9rem; font-weight: normal; margin: 0; }
 
 /* Case Studies */
 .case-studies { padding: 5rem 5%; }
@@ -1739,8 +1749,9 @@ footer p {
 }
 .author-info {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
 }
 .author-avatar {
     width: 45px;
@@ -1754,10 +1765,12 @@ footer p {
     font-weight: 700;
     color: #fff;
 }
-.author-info span {
+.author-info span, .author-info h5 {
     display: block;
     color: var(--text-muted);
     font-size: 0.9rem;
+    font-weight: normal;
+    margin: 0;
 }
 .read-time {
     display: flex;
@@ -4405,3 +4418,81 @@ p.premium-text-animate {
     width: 4px;
     background-color: var(--primary-color);
 }
+
+/* --- Premium Typing & Reveal Animation --- */
+.anim-line-wrapper {
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.anim-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #ffffff;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+}
+
+.anim-cursor.gradient-cursor {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+/* --- 360-Degree 3D Card Rotation Animation --- */
+.service-card, .testimonial-card, .case-card, .pricing-card, .mv-card, .article-card, .post-card, .author-card, .location-card, .int-card, .h-blog-card, .mv-glass-card, .wwd-card, .tech-card, .why-card, .service-premium-card, .solution-card, .featured-blog-card, .premium-blog-card, .viz-card, .info-card, .help-card, .map-overlay-card, .kpi-card, .chart-card, .table-card, .insight-card, .team-card-v2, .partner-logos-scroll span {
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 1.2s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+}
+
+.service-card:hover, .testimonial-card:hover, .case-card:hover, .pricing-card:hover, .mv-card:hover, .article-card:hover, .post-card:hover, .author-card:hover, .location-card:hover, .int-card:hover, .h-blog-card:hover, .mv-glass-card:hover, .wwd-card:hover, .tech-card:hover, .why-card:hover, .service-premium-card:hover, .solution-card:hover, .featured-blog-card:hover, .premium-blog-card:hover, .viz-card:hover, .info-card:hover, .help-card:hover, .map-overlay-card:hover, .kpi-card:hover, .chart-card:hover, .table-card:hover, .insight-card:hover, .team-card-v2:hover, .partner-logos-scroll span:hover {
+    transform: perspective(1200px) rotateY(360deg) translateY(-10px) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15) !important;
+    z-index: 10;
+}
+
+
+
+/* --- Hero Parallax Particles Animation --- */
+.hero-particles, .hero-particles::before, .hero-particles::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1; /* Above background, below content */
+}
+
+/* Base glowing blue particles */
+.hero-particles {
+    background-image: radial-gradient(circle, rgba(56, 189, 248, 0.4) 2px, transparent 3px);
+    background-size: 100px 100px;
+    animation: particlesDrift 45s linear infinite;
+}
+
+/* Smaller, faster white particles */
+.hero-particles::before {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px);
+    background-size: 60px 60px;
+    animation: particlesDrift 30s linear infinite reverse;
+}
+
+/* Large, blurry glowing orbs */
+.hero-particles::after {
+    background-image: radial-gradient(circle, rgba(56, 189, 248, 0.6) 4px, transparent 5px);
+    background-size: 180px 180px;
+    animation: particlesDrift 60s linear infinite;
+    filter: blur(3px);
+}
+
+@keyframes particlesDrift {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 1000px 1000px; }
+}
+

@@ -620,3 +620,86 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// Premium Typing & Reveal Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const title = document.getElementById('animated-hero-title');
+    if (!title) return;
+
+    const wrappers = title.querySelectorAll('.anim-line-wrapper');
+    const linesData = [];
+
+    // Initial setup
+    wrappers.forEach(wrapper => {
+        const textSpan = wrapper.querySelector('.anim-line-text');
+        const cursor = wrapper.querySelector('.anim-cursor');
+        
+        linesData.push({
+            wrapper,
+            textSpan,
+            cursor,
+            fullText: textSpan.textContent
+        });
+        
+        textSpan.textContent = '';
+        
+        wrapper.style.opacity = '0';
+        wrapper.style.transform = 'translateY(20px)';
+        wrapper.style.transition = 'opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        
+        // Hide cursor initially
+        cursor.style.opacity = '0';
+        cursor.style.animation = 'none';
+        cursor.classList.remove('hidden'); // Remove the hidden class from html
+    });
+
+    const typingSpeed = 40; // ms per char
+    const lineDelay = 300; // ms between lines
+
+    function typeLine(index) {
+        if (index >= linesData.length) {
+            // Keep last cursor blinking
+            linesData[linesData.length - 1].cursor.style.animation = 'blinkCursor 0.8s step-end infinite';
+            return;
+        }
+
+        const { wrapper, textSpan, cursor, fullText } = linesData[index];
+        
+        // Reveal wrapper
+        wrapper.style.opacity = '1';
+        wrapper.style.transform = 'translateY(0)';
+        
+        // Show cursor solid while typing
+        cursor.style.opacity = '1';
+        cursor.style.animation = 'none';
+
+        let charIndex = 0;
+        
+        // Delay typing slightly so fade up starts first
+        setTimeout(() => {
+            const typingInterval = setInterval(() => {
+                if (charIndex < fullText.length) {
+                    textSpan.textContent += fullText.charAt(charIndex);
+                    charIndex++;
+                } else {
+                    clearInterval(typingInterval);
+                    
+                    // After typing finishes, blink cursor briefly before next line
+                    cursor.style.animation = 'blinkCursor 0.8s step-end infinite';
+                    
+                    setTimeout(() => {
+                        if (index < linesData.length - 1) {
+                            cursor.style.opacity = '0';
+                            cursor.style.animation = 'none';
+                        }
+                        typeLine(index + 1);
+                    }, lineDelay);
+                }
+            }, typingSpeed);
+        }, 200);
+    }
+
+    setTimeout(() => {
+        typeLine(0);
+    }, 300);
+});
