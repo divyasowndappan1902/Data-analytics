@@ -4445,54 +4445,70 @@ p.premium-text-animate {
 }
 
 
-/* --- 360-Degree 3D Card Rotation Animation --- */
-.service-card, .testimonial-card, .case-card, .pricing-card, .mv-card, .article-card, .post-card, .author-card, .location-card, .int-card, .h-blog-card, .mv-glass-card, .wwd-card, .tech-card, .why-card, .service-premium-card, .solution-card, .featured-blog-card, .premium-blog-card, .viz-card, .info-card, .help-card, .map-overlay-card, .kpi-card, .chart-card, .table-card, .insight-card, .team-card-v2, .partner-logos-scroll span {
-    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 1.2s cubic-bezier(0.23, 1, 0.32, 1) !important;
-    transform-style: preserve-3d;
-    backface-visibility: visible;
-}
-
-.service-card:hover, .testimonial-card:hover, .case-card:hover, .pricing-card:hover, .mv-card:hover, .article-card:hover, .post-card:hover, .author-card:hover, .location-card:hover, .int-card:hover, .h-blog-card:hover, .mv-glass-card:hover, .wwd-card:hover, .tech-card:hover, .why-card:hover, .service-premium-card:hover, .solution-card:hover, .featured-blog-card:hover, .premium-blog-card:hover, .viz-card:hover, .info-card:hover, .help-card:hover, .map-overlay-card:hover, .kpi-card:hover, .chart-card:hover, .table-card:hover, .insight-card:hover, .team-card-v2:hover, .partner-logos-scroll span:hover {
-    transform: perspective(1200px) rotateY(360deg) translateY(-10px) !important;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15) !important;
-    z-index: 10;
-}
 
 
-
-/* --- Hero Parallax Particles Animation --- */
-.hero-particles, .hero-particles::before, .hero-particles::after {
-    content: '';
+/* --- Premium Aurora Background Animation --- */
+.hero-animated-bg {
     position: absolute;
     inset: 0;
+    overflow: hidden;
+    z-index: 0;
     pointer-events: none;
-    z-index: 1; /* Above background, below content */
+    background-color: #020617; /* Very dark blue/black base */
 }
 
-/* Base glowing blue particles */
-.hero-particles {
-    background-image: radial-gradient(circle, rgba(56, 189, 248, 0.4) 2px, transparent 3px);
-    background-size: 100px 100px;
-    animation: particlesDrift 45s linear infinite;
+.hero-animated-bg::before,
+.hero-animated-bg::after,
+.hero-animated-bg .aurora-1,
+.hero-animated-bg .aurora-2 {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    animation: auroraDrift 15s infinite alternate ease-in-out;
 }
 
-/* Smaller, faster white particles */
-.hero-particles::before {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.6) 1.5px, transparent 1.5px);
-    background-size: 60px 60px;
-    animation: particlesDrift 30s linear infinite reverse;
+.hero-animated-bg::before {
+    top: -20%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: #38bdf8;
+    animation-delay: 0s;
 }
 
-/* Large, blurry glowing orbs */
-.hero-particles::after {
-    background-image: radial-gradient(circle, rgba(56, 189, 248, 0.6) 4px, transparent 5px);
-    background-size: 180px 180px;
-    animation: particlesDrift 60s linear infinite;
-    filter: blur(3px);
+.hero-animated-bg::after {
+    bottom: -20%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: #818cf8;
+    animation-delay: -3s;
+    animation-direction: alternate-reverse;
 }
 
-@keyframes particlesDrift {
-    0% { background-position: 0px 0px; }
-    100% { background-position: 1000px 1000px; }
+.hero-animated-bg .aurora-1 {
+    top: 30%;
+    left: 40%;
+    width: 45vw;
+    height: 45vw;
+    background: #c084fc;
+    animation-delay: -7s;
 }
 
+.hero-animated-bg .aurora-2 {
+    top: -10%;
+    right: 20%;
+    width: 55vw;
+    height: 55vw;
+    background: #2dd4bf;
+    animation-delay: -11s;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes auroraDrift {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(5vw, 10vh) scale(1.1) rotate(10deg); }
+    100% { transform: translate(-10vw, -5vh) scale(0.9) rotate(-10deg); }
+}
