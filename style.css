@@ -3674,11 +3674,37 @@ footer p {
     .services-grid, .features-grid, .testimonial-grid, .case-grid, .pricing-grid, .mv-premium-grid, .wwd-grid, .team-grid, .mv-grid, .post-grid, .footer-grid, .process-steps {
         grid-template-columns: 1fr !important;
     }
-
-    /* Forms */
-    .form-group, .footer-form, .contact-form { flex-direction: column; }
-    .form-group input, .footer-form input { width: 100%; border-radius: 10px; margin-bottom: 0.5rem; }
-    .form-group button, .footer-form button { width: 100%; border-radius: 10px; }
+    .contact-form { flex-direction: column; }
+    .form-group, .footer-form {
+        flex-direction: row;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 0;
+        gap: 0;
+        width: 100%;
+    }
+    .form-group input, .footer-form input {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 0.8rem 1rem;
+        color: #fff;
+    }
+    .form-group button, .footer-form button {
+        width: auto;
+        margin: 0;
+        border-radius: 0 !important;
+        padding: 0 1.2rem;
+        box-shadow: none !important;
+        transform: none !important;
+        white-space: nowrap;
+    }
 
     /* Misc */
     .about-image img, .dashboard-mockup { width: 100%; max-width: 100%; }
